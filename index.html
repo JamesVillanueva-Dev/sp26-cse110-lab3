@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <link rel="icon" href="screenshots/example.png"> 
+  <head>
+    <title>James' First Brainstorm</title>
+  </head>
+  <body>
+    <header>
+        <h1> Documentation</h1>
+        <nav>
+            <ul>
+                <li><a href="#date">Date</a></li>
+                <li><a href="#attendance">Attendance List</a></li>
+                <li><a href="#agenda">Agenda for this meeting</a></li>
+                <li><a href="#diagram">Diagram for architecture</a></li>
+                <li><a href="#tasks">Tasks</a></li>
+                <li><a href="#unfinished">Unifinished tasks from previous meeting</a></li>
+                <li><a href="#current">Current Product</a></li>
+                <li><a href="#end">End of doc</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 id="date"> April 8th 2026 </h2>
+        <div class="list of attendance">
+        <h3 id="attendance"> People that attended meeting</h3>
+        <ul>
+            <li> <b>James</b></li>
+            <li> <i>Other Person</i></li>
+            <li> Another person</li>
+
+        </ul>   
+
+        <h3 id="agenda"> Agenda for today's meeting</h3>
+        <ul>
+            <li> Go over current progess</li>
+            <li> <em>Talk about updates</em></li>
+            <li> <strong>Future plans</strong></li>
+
+        </ul>   
+        <h3 id="diagram">Diagram</h3>
+        <img src="Roadmap.png" width="320" height="240">
+        <h3 id="unfinished">List of unfinished things from last meeting</h3>
+        <ul>
+            <li>None</li>
+        </ul>
+        </div>
+        <p> Notes: Someone has to continue work on the frontend while <span>James</span> will continue<br> working on the backend </p>
+        <h3 id="tasks">Things to be done (in order of priority)</h3> 
+        <ol> 
+            <li>Frontend stuff</li>
+            <li>Backend stuff</li>
+        </ol>
+        <h3 id="current">Current Product</h3>
+        <img src="screenshots/example.png" width="320" height="240">
+        <video width="320" height="240" controls>
+            <source src="vid_110.mp4" type="video/mp4">
+        </video>
+        <audio width="320" height="240" controls>
+            <source src="audio_110.mp3" type="audio/mpeg">
+        </audio>
+        <section id="end">
+            <details>
+                <summary>Final Comments</summary>
+                <p>none</p>
+            </details>
+        </section>
+    </main>
+    <footer>
+        <div>&copy; CSE 110</div>
+
+        <form> 
+            <fieldset>
+                <legend>Info:</legend>
+                <label for="fname">First name:</label>
+                <input type="text" id="fname" name="fname"><br><br>
+                <input type="checkbox" id="fname" name="fname"><br><br>
+                <input type="radio" id="fname" name="fname"><br><br>
+                <input type="date" id="fname" name="fname"><br><br>
+                <textarea rows="3" cols="40">
+                We are taking your info :D
+                </textarea>
+            </fieldset>
+            <label for="answer">Choose 15+15=? from the list:</label>
+            <input list="answers" name="answers" id="answer">
+
+            <datalist id="answers">
+            <option value="100">
+            <option value="10">
+            <option value="12">
+            <option value="15">
+            <option value="30">
+            </datalist>
+
+           <label for="answer">Choose answer for 9+10:</label>
+
+            <select name="answer" id="answers">
+            <option value="21">21</option>
+            <option value="21">21</option>
+            <option value="21">21</option>
+            <option value="21">21</option>
+            </select>
+
+        </form>
+        <button type="button">Button!</button>
+    </footer>
+  </body>
+</html>
