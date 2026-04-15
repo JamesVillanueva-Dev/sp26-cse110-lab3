@@ -1,10 +1,13 @@
 ---
 name: Custom issue template
-about: Describe this issue template's purpose here.
+about: 'Issues: '
 title: ''
 labels: ''
-assignees: ''
+assignees: JamesVillanueva-Dev
 
 ---
 
+Issues to address:
 
+
+How long it might take:
