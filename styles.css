@@ -1,39 +1,225 @@
-h2 {
-    color: rgb(255,0,0);
-    /*The only h2 in my html is the date so the date will be red */
-}
-.note {
-    font-weight: bolder;
-    margin: auto;
-    color: #ff0000
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+
+/* Basic variables */
+:root {
+  --main-color: #0f4c5c;
+  --bg: rgb(245, 245, 245);
 }
 
-.name{
-    color: hsl(192, 72%, 22%);
-}
-
-ul, ol {
-  list-style-position: inside;
-  text-align: center;
-  padding-left: 0;   /* removes default left indent */
-}
-
-/*aligned*/
+/* Universal selector */
 * {
-  margin: 100;
-  padding: 100;
-  text-align: center;
   box-sizing: border-box;
 }
- /*Links */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Slab', serif;
+  color: var(--text-color, #222); /* variable with fallback */
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in srgb, #ffffff 70%, #c7e7ef 30%),
+    color(srgb 0.92 0.94 0.96 / 1)
+  );
+  text-align: center;
+}
+
+/* Element selectors */
+h2 {
+  color: rgb(255, 0, 0);
+  text-decoration: underline;
+}
+
+h3 {
+  color: hsl(192, 72%, 22%);
+}
+
+/* ID selector */
+#current {
+  color: orange; /* color name */
+}
+
+/* Class selectors */
+.note {
+  color: #b00020;
+  font-weight: bold;
+}
+
+.name {
+  color: hsla(192, 72%, 22%, 0.95);
+}
+
+/* Selector list */
+ul, ol {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+/* Attribute selector */
 a[href^="#"] {
   color: teal;
 }
+
+/* Pseudo classes */
 a:hover {
   color: orange;
 }
 
+button:active {
+  background-color: #ddd;
+}
+
+/* Display values */
 video, audio {
   display: block;
-  margin: 10px auto;
+  margin: 12px auto;
+}
+
+button {
+  display: inline-block;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  display: inline;
+}
+
+datalist {
+  display: none;
+}
+
+/* Sizing + absolute/relative units */
+main {
+  width: 90%;        /* relative % */
+  max-width: 16cm;   /* absolute cm */
+  min-width: 320px;  /* absolute px */
+  margin: auto;      /* auto margin */
+
+  /* Margin */
+  margin-top: 12px;
+  margin-right: auto;
+  margin-bottom: 12px;
+  margin-left: auto;
+
+  /* Padding  */
+  padding: 1rem 1.2rem 1rem 1.2rem; /* relative rem */
+
+  /* Border */
+  border-style: solid;
+  border-color: #999;
+  border-width: 2px;
+  border-radius: 10px;
+
+  position: relative;
+  background-color: #fff;
+}
+
+header {
+  background-color: rgba(15, 76, 92, 0.9);
+  color: white;
+
+  /* Padding longhand */
+  padding-top: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+
+  /* Margin shorthand */
+  margin: 0 0 10px 0;
+  position: sticky;
+  top: 0;
+}
+
+img {
+  width: 100%;
+  max-width: 500px;
+  min-width: 200px;
+  height: auto;
+  border: 3px dashed #8ab; /* border shorthand */
+  border-radius: 6px;
+}
+
+/* Combinators */
+
+nav a {
+  background-color: #e5f7fb;
+  padding: 2px 5px;
+}
+
+/* Child */
+nav > ul {
+  border: 2px dotted #0f4c5c;
+}
+
+/* General sibling */
+h3 ~ ol {
+  background-color: #fff4cc;
+}
+
+/* Adjacent sibling */
+h3 + ul {
+  border: 2px solid #f8b4b4;
+}
+
+/* Combining two selectors */
+p.note {
+  border: 2px solid #f44;
+  padding: 0.6em; /* relative em */
+}
+
+/* New selector: :has() */
+h3:has(+ ul) {
+  border-left: 7px solid #333;
+}
+
+/* New selector: nested selectors */
+main {
+  section#end {
+    border: 2px dashed #333;
+    margin-top: 10px;
+
+    summary {
+      color: color(display-p3 0.1 0.3 0.35 / 1);
+      font-size: 12pt; /* absolute pt */
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Flexbox (3+ children in nav ul) */
+nav > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* Grid (3+ children in form) */
+footer form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  align-items: start;
+}
+
+/* Extra box model examples */
+fieldset {
+  /* Padding */
+  padding: 10px 12px 10px 12px;
+
+  /* Border  */
+  border: 0.08in solid #bbb; /* absolute in */
+
+  /* Margin */
+  margin: 0 0 10px 0;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 700px) {
+  footer form {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
 }
