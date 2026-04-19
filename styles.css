@@ -178,6 +178,7 @@ main section#end {
 }
 
 main section#end summary {
+  color: color(display-p3 0.1 0.3 0.35 / 1);
   font-size: 12pt; /* absolute pt */
   text-decoration: underline;
 }
