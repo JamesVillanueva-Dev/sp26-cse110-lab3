@@ -11,3 +11,29 @@ h2 {
 .name{
     color: hsl(192, 72%, 22%);
 }
+
+ul, ol {
+  list-style-position: inside;
+  text-align: center;
+  padding-left: 0;   /* removes default left indent */
+}
+
+
+* {
+  margin: 100;
+  padding: 100;
+  text-align: center;
+  box-sizing: border-box;
+}
+ /*Links */
+a[href^="#"] {
+  color: teal;
+}
+a:hover {
+  color: orange;
+}
+
+video, audio {
+  display: block;
+  margin: 10px auto;
+}
