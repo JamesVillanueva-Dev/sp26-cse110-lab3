@@ -115,6 +115,8 @@ main {
 
 header {
   background-color: rgba(15, 76, 92, 0.9);
+  border-bottom: 4px solid #0b3a45;
+  border-bottom-color: color(display-p3 0.05 0.23 0.29 / 1);
   color: white;
 
   /* Padding longhand */
@@ -171,7 +173,7 @@ h3:has(+ ul) {
   border-left: 7px solid #333;
 }
 
-/* Nested selector equivalent (flattened for validator compatibility) */
+/* Fallback rules for browsers without nesting support */
 main section#end {
   border: 2px dashed #333;
   margin-top: 10px;
@@ -180,6 +182,19 @@ main section#end {
 main section#end summary {
   font-size: 12pt; /* absolute pt */
   text-decoration: underline;
+}
+
+/* Nested selectors */
+main {
+  & section#end {
+    border: 2px dashed #333;
+    margin-top: 10px;
+  }
+
+  & section#end summary {
+    font-size: 12pt; /* absolute pt */
+    text-decoration: underline;
+  }
 }
 
 /* Flexbox (3+ children in nav ul) */
@@ -196,6 +211,8 @@ footer form {
   grid-template-columns: 1fr 1fr;
   gap: 8px;
   align-items: start;
+  grid-auto-flow: row;
+  justify-items: start;
 }
 
 /* Extra box model examples */
